@@ -28,6 +28,17 @@ public final class Functions {
         return ((degrees + 180) % 360 - 180);
     }
 
+    /** -1 <= in <= 1 */
+    public static double normalize_input(double in) {
+        if (in < -1) {
+            return -1;
+        } else if (in > 1) {
+            return 1;
+        } else {
+            return in;
+        }
+    }
+
     public static double getCorrection(double error, double p, double e, double min_power, double max_power) {
         double correction = error * p;
         if ((Math.abs(correction) < max_power) && (error * p != 0)) {
