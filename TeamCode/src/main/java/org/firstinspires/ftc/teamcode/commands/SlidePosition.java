@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.commands.defaultcommands;
+package org.firstinspires.ftc.teamcode.commands;
 
 import static org.firstinspires.ftc.teamcode.subsystems.subsubsystems.Functions.normalize_joystick;
 import static org.firstinspires.ftc.teamcode.subsystems.subsubsystems.Functions.trigger_deadzone;

@@ -26,12 +26,13 @@ public class LinearSlide extends SubsystemBase {
   @Override
   public void periodic() {
     double error = targetPosition - motor.getCurrentPosition();
+    double motor_power =
+        Functions.normalize_input(error * Constants.linear_slide_p);
     telemetry.addData("Linear Slide Position", motor.getCurrentPosition());
     telemetry.addData("Linear Slide Error", error);
-    motor.setPower(Functions.normalize_input(error * Constants.linear_slide_p));
+    telemetry.addData("Linear Slide Power", motor_power);
+    motor.setPower(motor_power);
   }
 
-  public void changeTargetPosition(double delta) {
-    targetPosition += delta;
-  }
+  public void changeTargetPosition(double delta) { targetPosition += delta; }
 }
