@@ -11,6 +11,7 @@ import org.firstinspires.ftc.teamcode.subsystems.subsubsystems.Functions;
 
 public class Intake extends SubsystemBase {
   DcMotor motor;
+  Telemetry telemetry;
 
   boolean isOn = false;
 
@@ -18,6 +19,10 @@ public class Intake extends SubsystemBase {
     this.telemetry = telemetry;
 
     motor = map.get(DcMotor.class, Constants.intake_name);
+
+    motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+    motor.setDirection(DcMotor.Direction.FORWARD);
+    motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
   }
 
   public void on() {

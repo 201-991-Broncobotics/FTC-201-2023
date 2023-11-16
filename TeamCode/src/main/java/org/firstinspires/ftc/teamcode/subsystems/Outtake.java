@@ -12,13 +12,15 @@ import org.firstinspires.ftc.teamcode.subsystems.subsubsystems.Functions;
 
 public class Outtake extends SubsystemBase {
   Servo servo;
+  Telemetry telemetry;
+
   public Outtake(HardwareMap map, Telemetry telemetry) {
     this.telemetry = telemetry;
 
-    servo = map.get(Servo.class, Constants.outtake_name);
+    servo = map.get(Servo.class, Constants.outtake_servo_name);
   }
 
   public void open() { servo.setPosition(Constants.outtake_open_position); }
 
-  public void close() { servo.setPosition(Constants.outtake_close_position); }
+  public void close() { servo.setPosition(Constants.outtake_closed_position); }
 }

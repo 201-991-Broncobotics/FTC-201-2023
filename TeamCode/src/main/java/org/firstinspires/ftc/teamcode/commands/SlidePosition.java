@@ -18,6 +18,7 @@ public class SlidePosition extends CommandBase {
 
     public SlidePosition(LinearSlide slide, GamepadEx operator) {
         this.slide = slide;
+        addRequirements(slide);
         this.position_delta = () -> normalize_joystick(operator.getLeftY()) * Constants.linear_slide_controller_multiplier;
     }
 

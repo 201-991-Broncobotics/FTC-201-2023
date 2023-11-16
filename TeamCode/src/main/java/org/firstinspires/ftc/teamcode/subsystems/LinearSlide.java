@@ -21,6 +21,10 @@ public class LinearSlide extends SubsystemBase {
 
     motor = map.get(DcMotor.class, Constants.linear_slide_name);
     targetPosition = motor.getCurrentPosition();
+
+    motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+    motor.setDirection(DcMotor.Direction.FORWARD);
+    motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
   }
 
   @Override
@@ -35,4 +39,5 @@ public class LinearSlide extends SubsystemBase {
   }
 
   public void changeTargetPosition(double delta) { targetPosition += delta; }
+  public void setTargetPosition(double p) { targetPosition = p; }
 }
