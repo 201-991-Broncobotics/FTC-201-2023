@@ -32,8 +32,8 @@ public class Teleop extends CommandOpMode {
     Mecanum driveTrain =
         new Mecanum(hardwareMap, telemetry, Constants.wheel_names,
                     new boolean[] {false, false, false, false}, 0, 0, 0, false,
-                    RevHubOrientationOnRobot.LogoFacingDirection.UP,
-                    RevHubOrientationOnRobot.UsbFacingDirection.FORWARD);
+                    RevHubOrientationOnRobot.LogoFacingDirection.RIGHT,
+                    RevHubOrientationOnRobot.UsbFacingDirection.UP);
     LinearSlide slide = new LinearSlide(hardwareMap, telemetry);
     Intake intake = new Intake(hardwareMap, telemetry);
     Outtake outtake = new Outtake(hardwareMap, telemetry);
